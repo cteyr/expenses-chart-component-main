@@ -1,8 +1,8 @@
-import { Container } from "./container/container";
+import { AppLayout } from "./layout/AppLayout";
 // @ts-ignore
 import logo from "./assets/images/logo-react.png";
 
 const App = () => {
-  return <Container />;
+  return <AppLayout />;
 };
 export { App };
