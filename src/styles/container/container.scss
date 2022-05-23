@@ -7,19 +7,136 @@
   border-radius: 10px;
   background-color: transparent;
 
-  .div-head {
+  .head-container {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 18%;
     border-radius: 10px;
     background-color: hsl(10, 79%, 65%);
+    padding: 1rem 1rem;
+
+    .head-tittle {
+      display: flex;
+      flex-direction: column;
+
+      h6 {
+        color: hsl(27, 66%, 92%);
+      }
+      p {
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+    .circles {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      width: 10rem;
+
+      .circle-left {
+        position: absolute;
+        display: flex;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: black;
+        right: 0px;
+      }
+
+      .circle-right {
+        display: flex;
+        position: absolute;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        right: 1rem;
+        background-color: transparent;
+      }
+    }
   }
 
-  .div-body {
+  .body-container {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 77%;
     border-radius: 10px;
     background-color: hsl(33, 100%, 98%);
+    padding: 1rem 1.5rem;
+
+    .tittle-body {
+      h3 {
+        color: black;
+      }
+    }
+    .grafic {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      margin-top: 1rem;
+      // background-color: red;
+      gap: 0.5rem;
+      border-bottom: 1px hsl(28, 10%, 53%) solid;
+
+      span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        font-size: 0.5rem;
+        color: hsl(28, 10%, 53%);
+        height: 100%;
+        width: 100%;
+        padding-bottom: 1rem;
+
+        .days {
+          display: flex;
+          justify-content: top;
+
+          width: 100%;
+          border-radius: 2px;
+          background-color: hsl(10, 79%, 65%);
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 40%;
+      padding-top: 1rem;
+
+      .total-month {
+        display: flex;
+        flex-direction: column;
+        h6 {
+          color: hsl(28, 10%, 53%);
+        }
+        p {
+          color: black;
+          font-size: 1.7rem;
+        }
+      }
+      .last-month {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        text-align: right;
+        font-size: 0.7rem;
+        color: white;
+        margin-bottom: 0px;
+
+        p {
+          color: black;
+        }
+
+        .last-mont {
+          color: hsl(28, 10%, 53%);
+        }
+      }
+    }
   }
 }
