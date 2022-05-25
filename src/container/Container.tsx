@@ -11,33 +11,9 @@ const Container = () => {
   const [visibleAmountFri, setVisibleAmountFri] = useState(false);
   const [visibleAmountSat, setVisibleAmountSat] = useState(false);
   const [visibleAmountSun, setVisibleAmountSun] = useState(false);
-  const [max, setMax] = useState(0);
 
-  const calc_amount = (object_json) => {
-    var max_account = 0;
-    for (let i = 0; i < object_json.length; i++) {
-      if (object_json[i].amount > max_account) {
-        max_account = object_json[i].amount;
-      }
-    }
-    return max_account;
-  };
-
-  useEffect(() => {
-    // console.log("hola mundo");
-  });
-
-  const max_amount = useMemo(() => calc_amount(object_json), [object_json]);
-
-  const styles = {
-    height: object_json[2].amount,
-    backgroundColor: "hsl(186, 34%, 60%)",
-  };
-
-  useEffect(() => {
-    setMax(max_amount);
-  }, []);
-  //console.log(max);
+  const currentdate = new Date();
+  const day = currentdate.getDay();
 
   return (
     <div className="conatiner">
@@ -62,7 +38,7 @@ const Container = () => {
             )}
 
             <div
-              className={`mon days`}
+              className={`mon days ${day === 1 ? "current-day" : ""}`}
               style={{ height: object_json[0].amount }}
               onMouseOver={() => setVisibleAmountMon(true)}
               onMouseLeave={() => setVisibleAmountMon(false)}
@@ -74,7 +50,7 @@ const Container = () => {
               <div className="span-amount">${object_json[1].amount}</div>
             )}
             <div
-              className="tue days"
+              className={`tue days ${day === 2 ? "current-day" : ""}`}
               style={{ height: object_json[1].amount }}
               onMouseOver={() => setVisibleAmountTue(true)}
               onMouseLeave={() => setVisibleAmountTue(false)}
@@ -86,8 +62,8 @@ const Container = () => {
               <div className="span-amount">${object_json[2].amount}</div>
             )}
             <div
-              className="wed days"
-              style={styles}
+              className={`wed days ${day === 3 ? "current-day" : ""}`}
+              style={{ height: object_json[2].amount }}
               onMouseOver={() => setVisibleAmountWed(true)}
               onMouseLeave={() => setVisibleAmountWed(false)}
             ></div>
@@ -98,7 +74,7 @@ const Container = () => {
               <div className="span-amount">${object_json[3].amount}</div>
             )}
             <div
-              className="thu days"
+              className={`thu days ${day === 4 ? "current-day" : ""}`}
               style={{ height: object_json[3].amount }}
               onMouseOver={() => setVisibleAmountThu(true)}
               onMouseLeave={() => setVisibleAmountThu(false)}
@@ -110,7 +86,7 @@ const Container = () => {
               <div className="span-amount">${object_json[4].amount}</div>
             )}
             <div
-              className="fri days"
+              className={`fri days ${day === 5 ? "current-day" : ""}`}
               style={{ height: object_json[4].amount }}
               onMouseOver={() => setVisibleAmountFri(true)}
               onMouseLeave={() => setVisibleAmountFri(false)}
@@ -122,7 +98,7 @@ const Container = () => {
               <div className="span-amount">${object_json[5].amount}</div>
             )}
             <div
-              className="sat days"
+              className={`sat days ${day === 6 ? "current-day" : ""}`}
               style={{ height: object_json[5].amount }}
               onMouseOver={() => setVisibleAmountSat(true)}
               onMouseLeave={() => setVisibleAmountSat(false)}
@@ -134,7 +110,7 @@ const Container = () => {
               <div className="span-amount">${object_json[6].amount}</div>
             )}
             <div
-              className="sun days"
+              className={`sun days ${day === 7 ? "current-day" : ""}`}
               style={{ height: object_json[6].amount }}
               onMouseOver={() => setVisibleAmountSun(true)}
               onMouseLeave={() => setVisibleAmountSun(false)}
