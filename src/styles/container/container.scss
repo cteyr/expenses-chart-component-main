@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 65vh;
-  width: 25vw;
+  height: 450px;
+  width: 400px;
   border-radius: 10px;
   background-color: transparent;
 
@@ -23,6 +23,9 @@
     .head-tittle {
       display: flex;
       flex-direction: column;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
 
       h6 {
         color: hsl(27, 66%, 92%);
@@ -36,6 +39,7 @@
       display: flex;
       flex-direction: row;
       position: relative;
+      align-items: center;
       width: 10rem;
 
       .circle-left {
